@@ -1,0 +1,7 @@
+#!/bin/bash
+cd /home/reverse_proxy
+
+git fetch
+git pull
+
+systemctl restart proxyd
