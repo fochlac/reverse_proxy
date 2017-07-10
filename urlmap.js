@@ -37,5 +37,26 @@ module.exports = {
         "url": "",
         "port": "MONGO_PORT",
         "redirect": false
+    },
+    "eventplanner.fochlac.com": {
+        "url": "",
+        "redirect": false,
+        "port": "EVENT_PORT"
+    },
+    "event.fochlac.com": {
+        "redirect": false,
+        "url": "",
+        "port": "EVENT_PORT"
+    },
+    "trainer.fochlac.com": {
+        "redirect": false,
+        "url": "/",
+        "port": "TRAINER_PORT"
+    },
+    "dev.fochlac.com": {
+        "redirect": false,
+        "url": "/",
+        "port": "DEV_PORT",
+        "http": true
     }
 };

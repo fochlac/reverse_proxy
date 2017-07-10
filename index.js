@@ -45,7 +45,9 @@ const handleServerError = (err, req, res) => {
                 res.writeHead(302, {'Location': 'https://' + hostData.redirectUrl + req.url});
                 res.end();
             } else {
-                server.web(req, res, {target: 'https://localhost:' + ((typeof hostData.port === 'string') ? process.env[hostData.port] : hostData.port) + hostData.url});
+                server.web(req, res, {target: (hostData.http ? 'http' : 'https') + '://localhost:' + ((typeof hostData.port === 'string') ? process.env[hostData.port] : hostData.port) + hostData.url}, (err) => {
+                    if (err) console.log(err);
+                });
             }
         } else {
             res.writeHead(302, {'Location': 'https://' + defaultUrl});
