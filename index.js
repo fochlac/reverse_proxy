@@ -45,6 +45,7 @@ const handleServerError = (err, req, res) => {
                 res.writeHead(302, {'Location': 'https://' + hostData.redirectUrl + req.url});
                 res.end();
             } else {
+                req.originalIP = req.connection.remoteAddress
                 server.web(req, res, {target: (hostData.http ? 'http' : 'https') + '://localhost:' + ((typeof hostData.port === 'string') ? process.env[hostData.port] : hostData.port) + hostData.url}, (err) => {
                     if (err) console.log(err);
                 });
