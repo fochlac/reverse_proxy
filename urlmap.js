@@ -58,5 +58,20 @@ module.exports = {
         "url": "/",
         "port": "DEV_PORT",
         "http": true
+    },
+    "food.fochlac.com": {
+        "redirect": false,
+        "url": "",
+        "port": "FOOD_PORT"
+    },
+    "food-dev.fochlac.com": {
+        "redirect": false,
+        "url": "",
+        "port": 55231
+    },
+    "tweeter.fochlac.com": {
+        "redirect": false,
+        "url": "",
+        "port": 54121
     }
 };
