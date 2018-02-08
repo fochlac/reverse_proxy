@@ -9,8 +9,9 @@
   "author": "Florian Riedel",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "http-proxy": "^1.16.2",
-    "request": "^2.83.0",
+    "request": "^2.83.0"
   }
 }
