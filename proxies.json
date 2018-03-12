@@ -18,8 +18,8 @@
         "port": "SP_PORT",
         "redirect": false
     },
-    "caro.fochlac.com": {
-        "url": "/caro",
+    "pavel.fochlac.com": {
+        "url": "/pavel",
         "port": "SP_PORT",
         "redirect": false
     },
@@ -67,6 +67,11 @@
     "food-dev.fochlac.com": {
         "redirect": false,
         "url": "",
+        "port": 55231
+    },
+    "food-dev1.fochlac.com": {
+        "redirect": false,
+        "url": "/1",
         "port": 55231
     },
     "tweeter.fochlac.com": {

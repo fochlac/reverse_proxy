@@ -18,8 +18,8 @@ module.exports = {
         "port": "SP_PORT",
         "redirect": false
     },
-    "caro.fochlac.com": {
-        "url": "/caro",
+    "pavel.fochlac.com": {
+        "url": "/pavel",
         "port": "SP_PORT",
         "redirect": false
     },

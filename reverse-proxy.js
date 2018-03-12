@@ -6,12 +6,16 @@ module.exports = (req, res) => {
     const url = reqURLMap(req);
 
     if (!url) {
+        console.log("url not found, redirecting to default url")
         return res.redirect('https://' + defaultUrl);
     }
 
     console.log("redirecting from " + req.host + req.url + " to " + url);
 
-    req.headers.originalIP = req.connection.remoteAddress;
+    req.proxy.originalIP = req.connection.remoteAddress;
+    req.proxy.host = req.host;
+    req.proxy.url = req.url;
+
     req
       .pipe(
         request({
