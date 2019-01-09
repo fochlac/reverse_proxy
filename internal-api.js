@@ -4,6 +4,11 @@ const   routes      = require('express').Router()
 
 routes.use(bodyparser.json());
 
+routes.use((req,res,next) => {
+    console.log(req.url)
+    next();
+})
+
 routes.post('/proxies', (req, res) => {
     db.set(req.body.host, req.body.proxy);
 
@@ -24,4 +29,7 @@ routes.get('/proxies', (req, res) => {
     res.status(200).send(db.getAll());
 })
 
+routes.get('*', (req, res) => {
+    res.status(404).json({status: 404, reason: 'unknown route'})
+})
 module.exports = routes;

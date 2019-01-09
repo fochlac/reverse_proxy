@@ -11,7 +11,7 @@ try {
 }
 
 const write = () => {
-    fs.writeFile(proxyFile, JSON.stringify(proxies), 'utf8', (err) => {
+    fs.writeFile(proxyFile, JSON.stringify(proxies, null, 4), 'utf8', (err) => {
         if (err) {
             console.log('error saving data' + err);
         }

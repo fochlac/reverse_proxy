@@ -15,8 +15,8 @@ app.use(proxy);
 https.createServer(greenlock.httpsOptions, greenlock.middleware(app)).listen(443)
 http.createServer(greenlock.middleware(redirectHttps())).listen(80);
 
-http.createServer(internalServer).listen(33333, 'localhost', () => {
-  console.log('Internal proxy control up.')
+http.createServer(internalServer).listen(process.env.PROXY_PORT, 'localhost', () => {
+  console.log('Internal proxy control up, listening on port: ', process.env.PROXY_PORT)
 })
 
 internalServer.use(internalApi)
