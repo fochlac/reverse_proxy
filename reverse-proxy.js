@@ -10,11 +10,13 @@ module.exports = (req, res) => {
         return res.redirect('https://' + defaultUrl);
     }
 
-    console.log("redirecting from " + req.host + req.url + " to " + url);
+    console.log("redirecting from " + req.protocol + "://" + req.host + req.url + " to " + url);
 
-    req.proxy.originalIP = req.connection.remoteAddress;
-    req.proxy.host = req.host;
-    req.proxy.url = req.url;
+    req.headers.proxy_ip = req.connection.remoteAddress;
+    req.headers.proxy_host = req.host;
+    req.headers.proxy_url = req.url;
+    req.headers.proxy_protocol = req.protocol;
+    req.headers.proxied = true;
 
     req
       .pipe(

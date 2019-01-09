@@ -8,6 +8,7 @@ const express = require("express"),
   server_port_ssl = 443,
   fs = require("fs"),
   proxy = require("./reverse-proxy"),
+  internalAPI = require('./internal-api')
   server_ip_address = "fochlac.com",
   https = require("https"),
   sslServer = https.createServer(
@@ -30,8 +31,10 @@ http.createServer((req, res) => {
   })
   .listen(server_port);
 
-http.createServer(internalServer).listen(33333, 'localhost', () => {
-  console.log('Internal proxy control up.')
+http.createServer(internalServer).listen(process.env.PROXY_PORT, 'localhost', () => {
+  console.log('Internal proxy control up, listening on port: ', process.env.PROXY_PORT)
 })
+
+internalServer.use(internalAPI)
 
 app.use("/", proxy);

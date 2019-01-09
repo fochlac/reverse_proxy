@@ -4,6 +4,11 @@ module.exports = {
         "port": "CRAWLER_PORT",
         "redirect": false
     },
+    "gallery.fochlac.com": {
+        "url": "",
+        "port": "GALLERY_PORT",
+        "redirect": false
+    },
     "www.fochlac.com": {
         "redirect": true,
         "redirectUrl": "fochlac.com"

@@ -4,6 +4,11 @@
         "port": "CRAWLER_PORT",
         "redirect": false
     },
+    "gallery.fochlac.com": {
+        "url": "",
+        "port": "GALLERY_PORT",
+        "redirect": false
+    },
     "www.fochlac.com": {
         "redirect": true,
         "redirectUrl": "fochlac.com"
@@ -43,7 +48,7 @@
         "redirect": false,
         "port": "EVENT_PORT"
     },
-    "event.fochlac.com": {
+    "event-old.fochlac.com": {
         "redirect": false,
         "url": "",
         "port": "EVENT_PORT"
@@ -61,6 +66,11 @@
     },
     "food.fochlac.com": {
         "redirect": false,
+        "url": "/1",
+        "port": "FOOD_PORT"
+    },
+    "events.fochlac.com": {
+        "redirect": false,
         "url": "",
         "port": "FOOD_PORT"
     },
@@ -69,14 +79,19 @@
         "url": "",
         "port": 55231
     },
-    "food-dev1.fochlac.com": {
+    "dako.fochlac.com": {
         "redirect": false,
-        "url": "/1",
-        "port": 55231
+        "url": "/2",
+        "port": "FOOD_PORT"
     },
-    "tweeter.fochlac.com": {
+    "tomtom.fochlac.com": {
         "redirect": false,
-        "url": "",
-        "port": 54121
+        "url": "/6",
+        "port": "FOOD_PORT"
+    },
+    "test1.fochlac.com": {
+        "redirect": false,
+        "url": "/10",
+        "port": "FOOD_PORT"
     }
 }
