@@ -1,0 +1,74 @@
+{
+  "defaults": {
+    "store": {
+      "module": "greenlock-store-fs"
+    },
+    "challenges": {
+      "http-01": {
+        "module": "acme-http-01-standalone"
+      }
+    },
+    "renewOffset": "-45d",
+    "renewStagger": "3d",
+    "accountKeyType": "EC-P256",
+    "serverKeyType": "RSA-2048",
+    "subscriberEmail": "low@fochlac.com"
+  },
+  "sites": [
+    {
+      "subject": "fochlac.com",
+      "altnames": [
+        "fochlac.com",
+        "feedback.fochlac.com",
+        "crawler.fochlac.com",
+        "dako.fochlac.com",
+        "dev.fochlac.com",
+        "dsa.fochlac.com",
+        "eventplanner.fochlac.com",
+        "events.fochlac.com",
+        "fg.fochlac.com",
+        "fochlac.com",
+        "food.fochlac.com",
+        "gallery.fochlac.com",
+        "gcs.fochlac.com",
+        "home.fochlac.com",
+        "mongo.fochlac.com",
+        "muta.fochlac.com",
+        "old.fochlac.com",
+        "pavel.fochlac.com",
+        "test.fochlac.com",
+        "trainer.fochlac.com",
+        "www.fochlac.com"
+      ],
+      "renewAt": 1685940783041
+    },
+    {
+      "subject": "muta-alpha.fochlac.com",
+      "altnames": [
+        "muta-alpha.fochlac.com"
+      ],
+      "renewAt": 1686951963223
+    },
+    {
+      "subject": "manga.fochlac.com",
+      "altnames": [
+        "manga.fochlac.com"
+      ],
+      "renewAt": 1687038704175
+    },
+    {
+      "subject": "zeiss.fochlac.com",
+      "altnames": [
+        "zeiss.fochlac.com"
+      ],
+      "renewAt": 1687398944407
+    },
+    {
+      "subject": "qweasd2.fochlac.com",
+      "altnames": [
+        "qweasd2.fochlac.com"
+      ],
+      "renewAt": 1687314284224
+    }
+  ]
+}

@@ -23,6 +23,11 @@
         "port": "SP_PORT",
         "redirect": false
     },
+    "gcs.fochlac.com": {
+        "url": "",
+        "port": "GCSOLVER_PORT",
+        "redirect": false
+    },
     "pavel.fochlac.com": {
         "url": "/pavel",
         "port": "SP_PORT",
@@ -92,6 +97,41 @@
     "test1.fochlac.com": {
         "redirect": false,
         "url": "/10",
+        "port": "FOOD_PORT"
+    },
+    "test.fochlac.com": {
+        "redirect": false,
+        "url": "/2",
+        "port": 55231
+    },
+    "muta.fochlac.com": {
+        "redirect": false,
+        "url": "",
+        "port": 51987
+    },
+    "muta-alpha.fochlac.com": {
+        "redirect": false,
+        "url": "",
+        "port": 51789
+    },
+    "manga.fochlac.com": {
+        "redirect": false,
+        "url": "",
+        "port": 43214
+    },
+    "feedback.fochlac.com": {
+        "redirect": false,
+        "url": "",
+        "port": 51298
+    },
+    "zeiss.fochlac.com": {
+        "redirect": false,
+        "url": "/11",
+        "port": "FOOD_PORT"
+    },
+    "qweasd2.fochlac.com": {
+        "redirect": false,
+        "url": "/12",
         "port": "FOOD_PORT"
     }
 }

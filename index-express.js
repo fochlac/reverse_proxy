@@ -6,14 +6,26 @@ const express = require("express"),
   http = require("http"),
   greenlock = require('./greenlock'),
   internalApi = require('./internal-api'),
-  https = require('https'),
   proxy = require("./reverse-proxy"),
   redirectHttps = require('redirect-https');
 
-app.use(proxy);
 
-https.createServer(greenlock.httpsOptions, greenlock.middleware(app)).listen(443)
-http.createServer(greenlock.middleware(redirectHttps())).listen(80);
+console.log(`running on node ${process.version}`)
+
+greenlock.ready((glx) => {
+  const httpsServer = glx.httpsServer(null, app)
+  httpsServer.listen(443, () => {
+    console.log('listening on port 443')
+  })
+  app.use(proxy(httpsServer))
+
+  const httpServer = glx.httpServer(null, redirectHttps());
+
+  httpServer.listen(80, "0.0.0.0", () => {
+      console.log("Listening on ", httpServer.address());
+  });
+
+})
 
 http.createServer(internalServer).listen(process.env.PROXY_PORT, 'localhost', () => {
   console.log('Internal proxy control up, listening on port: ', process.env.PROXY_PORT)

@@ -1,0 +1,84 @@
+#cert = :configDir/live/:hostname/cert.pem
+cert = ./le-config/live/dako.fochlac.com/cert.pem
+privkey = ./le-config/live/dako.fochlac.com/privkey.pem
+chain = ./le-config/live/dako.fochlac.com/chain.pem
+fullchain = ./le-config/live/dako.fochlac.com/fullchain.pem
+
+# Options and defaults used in the renewal process
+[renewalparams]
+no_self_upgrade = True
+apache_enmod = a2enmod
+no_verify_ssl = False
+ifaces = None
+apache_dismod = a2dismod
+register_unsafely_without_email = False
+apache_handle_modules = True
+uir = None
+installer = None
+nginx_ctl = nginx
+config_dir = ./le-config
+text_mode = True
+# junk?
+# https://github.com/letsencrypt/letsencrypt/issues/1955
+func = <function obtain_cert at 0x7f093a163c08>
+staging = False
+prepare = False
+work_dir = None
+tos = True
+init = False
+http01_port = None
+duplicate = False
+noninteractive_mode = True
+# this is for the domain
+key_path = ./le-config/live/dako.fochlac.com/privkey.pem
+nginx = False
+nginx_server_root = /etc/nginx
+fullchain_path = :fullchain_path
+email = low@fochlac.com
+csr = None
+agree_dev_preview = None
+redirect = None
+verb = certonly
+verbose_count = -3
+config_file = None
+renew_by_default = True
+hsts = False
+apache_handle_sites = True
+authenticator = webroot
+domains = dako.fochlac.com, #comma,delimited,list
+rsa_key_size = 2048
+apache_challenge_location = /etc/apache2
+# starts at 0 and increments at every renewal
+checkpoints = 0
+manual_test_mode = False
+apache = False
+cert_path = :cert_path
+webroot_path = /tmp/acme-704a88d5a60f2860/acme-challenge, # comma,delimited,list
+reinstall = False
+expand = False
+strict_permissions = False
+apache_server_root = /etc/apache2
+# https://github.com/letsencrypt/letsencrypt/issues/1948
+account = 082c232b5bb7e1e576ec76a89ebd4d89
+dry_run = False
+manual_public_ip_logging_ok = False
+chain_path = :chain_path
+break_my_certs = False
+standalone = False
+manual = False
+server = https://acme-v02.api.letsencrypt.org/directory
+standalone_supported_challenges = "http-01,tls-sni-01"
+webroot = True
+os_packages_only = False
+apache_init_script = None
+user_agent = None
+apache_le_vhost_ext = -le-ssl.conf
+debug = False
+tls_sni_01_port = 443
+logs_dir = /tmp/acme-704a88d5a60f2860/log
+apache_vhost_root = /etc/apache2/sites-available
+configurator = None
+must_staple = False
+[[webroot_map]]
+# :hostname = :webroot_path
+dako.fochlac.com = /tmp/acme-704a88d5a60f2860/acme-challenge
